@@ -3,7 +3,7 @@
 // Distributed under the 3-Clause BSD License.  See accompanying
 // file LICENSE or https://github.com/CLIUtils/CLI11 for details.
 
-// [CLI11:verbatim]
+// [CLI11:Macros:verbatim]
 
 // The following version macro is very similar to the one in PyBind11
 #if !(defined(_MSC_VER) && __cplusplus == 199711L) && !defined(__INTEL_COMPILER)
@@ -38,4 +38,10 @@
 #define CLI11_DEPRECATED(reason) __attribute__((deprecated(reason)))
 #endif
 
-// [CLI11:verbatim]
+#if defined(CLI11_COMPILED)
+#define CLI11_INLINE
+#else
+#define CLI11_INLINE inline
+#endif
+
+// [CLI11:Macros:end]

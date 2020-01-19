@@ -3,6 +3,7 @@
 // Distributed under the 3-Clause BSD License.  See accompanying
 // file LICENSE or https://github.com/CLIUtils/CLI11 for details.
 
+// [CLI11:public_headers:set]
 #include <algorithm>
 #include <functional>
 #include <memory>
@@ -11,16 +12,18 @@
 #include <tuple>
 #include <utility>
 #include <vector>
+// [CLI11:public_headers:end]
 
-#include "CLI/Error.hpp"
-#include "CLI/Macros.hpp"
-#include "CLI/Split.hpp"
-#include "CLI/StringTools.hpp"
-#include "CLI/Validators.hpp"
+#include "Error.hpp"
+#include "Macros.hpp"
+#include "Split.hpp"
+#include "StringTools.hpp"
+#include "Validators.hpp"
 
 namespace CLI {
 
 using results_t = std::vector<std::string>;
+
 /// callback function definition
 using callback_t = std::function<bool(const results_t &)>;
 
