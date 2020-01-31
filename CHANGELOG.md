@@ -1,3 +1,16 @@
+
+## Version 1.7.1: String conversion
+
+This version provides a quick patch that improves support for types with explicit string conversions.
+
+* Fix for string conversions [#421][]
+* More accurate includes [#416][]
+* Clearer value initialization for flags [#414][]
+
+[#421]: https://github.com/CLIUtils/CLI11/pull/421
+[#416]: https://github.com/CLIUtils/CLI11/pull/416
+[#414]: https://github.com/CLIUtils/CLI11/pull/414
+
 ## Version 1.9: Config files and cleanup
 
 Config file handling was revamped to fix common issues, and now supports reading [TOML](https://github.com/toml-lang/toml).
@@ -146,7 +159,7 @@ Set handling has been completely replaced by a new backend that works as a Valid
 [#279]: https://github.com/CLIUtils/CLI11/pull/279
 
 
-## Version 1.7.1: Quick patch
+### Version 1.7.1: Quick patch
 
 This version provides a quick patch for a (correct) warning from GCC 8 for the windows options code.
 
@@ -198,7 +211,7 @@ Passing the same subcommand multiple times is better supported. Several new feat
 [#199]: https://github.com/CLIUtils/CLI11/pull/199
 [#200]: https://github.com/CLIUtils/CLI11/pull/200
 
-## Version 1.6.2: Help-all
+### Version 1.6.2: Help-all
 
 This version fixes some formatting bugs with help-all. It also adds fixes for several warnings, including an experimental optional error on Clang 7. Several smaller fixes.
 
@@ -222,7 +235,7 @@ This version fixes some formatting bugs with help-all. It also adds fixes for se
 [#179]: https://github.com/CLIUtils/CLI11/pull/179
 
 
-## Version 1.6.1: Platform fixes
+### Version 1.6.1: Platform fixes
 
 This version provides a few fixes for special cases, such as mixing with `Windows.h` and better defaults
 for systems like Hunter. The one new feature is the ability to produce "branded" single file output for
