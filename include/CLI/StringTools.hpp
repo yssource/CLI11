@@ -6,7 +6,7 @@
 
 #pragma once
 
-// [CLI11:public_includes:set]
+// [cli11:public_includes:set]
 #include <algorithm>
 #include <iomanip>
 #include <locale>
@@ -15,7 +15,7 @@
 #include <string>
 #include <type_traits>
 #include <vector>
-// [CLI11:public_includes:end]
+// [cli11:public_includes:end]
 
 namespace CLI {
 
@@ -41,23 +41,10 @@ namespace detail {
 /// a constant defining an expected max vector size defined to be a big number that could be multiplied by 4 and not
 /// produce overflow for some expected uses
 constexpr int expected_max_vector_size{1 << 29};
+
 // Based on http://stackoverflow.com/questions/236129/split-a-string-in-c
 /// Split a string by a delim
-inline std::vector<std::string> split(const std::string &s, char delim) {
-    std::vector<std::string> elems;
-    // Check to see if empty string, give consistent result
-    if(s.empty()) {
-        elems.emplace_back();
-    } else {
-        std::stringstream ss;
-        ss.str(s);
-        std::string item;
-        while(std::getline(ss, item, delim)) {
-            elems.push_back(item);
-        }
-    }
-    return elems;
-}
+CLI11_INLINE std::vector<std::string> split(const std::string &s, char delim);
 
 /// Simple function to join a string
 template <typename T> std::string join(const T &v, std::string delim = ",") {
@@ -416,3 +403,7 @@ inline std::string &add_quotes_if_needed(std::string &str) {
 // [CLI11:string_tools_hpp:end]
 
 }  // namespace CLI
+
+#ifndef CLI11_COMPILED
+#include "StringTools-inl.hpp"
+#endif

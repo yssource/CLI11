@@ -41,4 +41,10 @@
 #define CLI11_DEPRECATED(reason) __attribute__((deprecated(reason)))
 #endif
 
+#if defined(CLI11_PRECOMPILE)
+#define CLI11_INLINE
+#else
+#define CLI11_INLINE inline
+#endif
+
 // [CLI11:macros_hpp:end]
